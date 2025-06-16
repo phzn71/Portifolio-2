@@ -1,30 +1,41 @@
-function verificarEstacao() {
-    let mes = prompt("Digite o nome de um mês (ex: Janeiro)").toUpperCase();
-    let estacao = "";
+ function verificarEstacao(){
+        let mes = prompt("Digite o mês").toUpperCase();
+        let estacao = "";
+        let corFundo = "";
 
-    if (mes === "DEZEMBRO" || mes === "JANEIRO" || mes === "FEVEREIRO") {
-        estacao = "VERÃO";
-        document.body.style.backgroundColor === "#FFD54F"; 
-
-    } else if (mes === "MARÇO" || mes === "ABRIL" || mes === "MAIO") {
-        estacao = "OUTONO";
-        document.body.style.backgroundColor = "#A1887F"; 
+        if ("DEZEMBRO JANEIRO FEVEREIRO".indexOf(mes) >= 0) {
+            estacao = "VERÃO";
+            corFundo = "yellow";
+        }
 
 
-    } else if (mes === "JUNHO" || mes === "JULHO" || mes ==="AGOSTO") {
-        estacao = "INVERNO";
-        document.body.style.backgroundColor = "#90CAF9";
+        else if ("MARÇO ABRIL MAIO".indexOf(mes) >= 0) {
+            estacao = "OUTONO";
+            corFundo = "orange";
+        }
 
 
-    } else if (mes = "SETEMBRO" || mes === "OUTUBRO" || mes === "NOVEMBRO") {
-        estacao = "PRIMAVERA";
-        document.body.style.backgroundColor = "#A5D6A7"; 
+
+        else if ("JUNHO JULHO AGOSTO".indexOf(mes) >= 0) {
+            estacao = "INVERNO";
+            corFundo = "lightblue";
+        }
 
 
-    } else {
-        estacao = "Mês inválido. Por favor, digite corretamente.";
-        document.body.style.backgroundColor = "white";
+        else if ("SETEMBRO OUTUBRO NOVEMBRO".indexOf(mes) >= 0) {
+            estacao = "PRIMAVERA";
+            corFundo = "lightgreen";
+        }
+
+
+
+        else {
+            estacao = "MÊS INVÁLIDO";
+            corFundo = "gray";
+        }
+
+
+        
+        document.body.style.backgroundColor = corFundo;
+        document.getElementById("resultado").innerText = "Estação: " + estacao;
     }
-
-    document.getElementById("resultado").innerText = estacao;
-}
